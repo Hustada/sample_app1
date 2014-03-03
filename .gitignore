@@ -9,8 +9,7 @@
 /log/*.log
 /tmp
 
-# Ignore other unneeded files.
-database.yml
+# Ignore other unneeded files. 
 doc/
 *.swp
 *~

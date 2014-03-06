@@ -14,3 +14,4 @@ describe "full_title" do
       expect(full_title("")).not_to match(/\|/)
     end
   end 
+  

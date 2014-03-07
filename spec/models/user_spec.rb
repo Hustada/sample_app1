@@ -75,6 +75,7 @@
                             password: " ", password_confirmation: " ")
         end
         it { should_not be_valid }
+      end  
 
 
       describe "when password does not match confirmation" do
@@ -101,6 +102,5 @@
         it { should_not eq user_for_invalid_password }
         specify { expect(user_for_invalid_password).to be_false }
       end
-    end
   end
 end

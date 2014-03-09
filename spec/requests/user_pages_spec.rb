@@ -39,8 +39,19 @@
         fill_in "Password confirmation", with: "foobar"
       end
 
+
       it "should create a user" do
         expect { click_button submit }.to change(User, :count).by(1)
+      end
+
+
+      describe "after submission" do
+        before { click_button submit }
+        let(:user) { User.find_by(email: 'user@example.com') }
+
+        it { should have_link('Sign in') }
+        it { should have_title(user.name) }
+        it { should have_selector('div.alert.alert-success', text: 'Welcome to the Sample App!') }
       end
     end
   end

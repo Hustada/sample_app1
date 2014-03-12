@@ -2,6 +2,7 @@
       before_action :signed_in_user, only: [ :index, :edit, :update ]
       before_action :correct_user,   only: [ :edit, :update ]
       before_action :admin_user,     only: :destroy
+      
 
       
       def index
@@ -49,6 +50,7 @@
       flash[:success] = "User deleted."
       redirect_to users_url
     end
+
 
 
     private

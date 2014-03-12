@@ -117,3 +117,5 @@
       end
     end
   end
+
+  #why the fuck do my tests pass on this branch but not on master when I merge? 

@@ -50,7 +50,6 @@ describe "User pages" do
     end
   end
 
-  
 
   describe "signup page" do
     before { visit signup_path }
@@ -76,7 +75,7 @@ describe "User pages" do
         fill_in "Name",         with: "Example User"
         fill_in "Email",        with: "user@example.com"
         fill_in "Password",     with: "foobar"
-        fill_in "Password confirmation", with: "foobar"
+        fill_in "Confirm Password", with: "foobar"
       end
 
       it "should create a user" do
@@ -141,6 +140,6 @@ describe "User pages" do
         patch user_path(user), params
       end
       specify { expect(user.reload).not_to be_admin }
+    end
   end
-end
 end

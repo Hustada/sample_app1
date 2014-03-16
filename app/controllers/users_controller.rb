@@ -1,4 +1,4 @@
-    class UsersController < ApplicationController
+      class UsersController < ApplicationController
       before_action :signed_in_user, only: [ :index, :edit, :update ]
       before_action :correct_user,   only: [ :edit, :update ]
       before_action :admin_user,     only: :destroy
@@ -16,6 +16,7 @@
 
       def show
         @user = User.find(params[:id])
+        @microposts = @user.microposts.paginate(page: params[:page])
       end
 
 
@@ -61,12 +62,7 @@
 
     #before filters
 
-    def signed_in_user
-      unless signed_in?
-        store_location
-      redirect_to signin_url, notice: "Please sign in." 
-    end
-  end
+    
 
     def correct_user
       @user = User.find(params[:id])
